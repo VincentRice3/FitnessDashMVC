@@ -1,0 +1,87 @@
+﻿@model List<FitnessDashMVC.Models.UserLogViewModel>
+
+@{
+    string greeting = "";
+
+    if (DateTime.Now.Hour < 12)
+    {
+        greeting = "Good Morning";
+    }
+    else
+    {
+        greeting = "Good Afternoon";
+    };
+
+    Console.WriteLine(DateTime.Today.Hour);
+}
+
+<h1>
+    @greeting
+</h1>
+
+<div class="appsContainer">
+
+    @foreach (var weekday in UserLogViewModel.SortByDate(Model))
+    {
+        string dayID = weekday.MakeID(weekday.CorrectDay(weekday.Date), 5);
+        <div class="card text-nowrap day-container">
+            <div class="card-body appContent">
+                <div class="editButton">
+                    <a class="edit" href="#"><i class="fa-solid fa-pen"></i></a>
+                    <a class="edit" href="#"><i class="fa-solid fa-trash"></i></a>
+                </div>
+                <hr />
+                <div class="header-text">
+
+                    <h4 class="card-title">
+                        @weekday.CorrectDay(weekday.Date)
+                    </h4>
+                    <h4 class="card-title">
+                        @weekday.Date.ToString("dd-MM-yyyy")
+                    </h4>
+                </div>
+                <hr />
+                @if (weekday.WorkoutTrue)
+                {
+                    <p>Great Work! You Worked Out! <i class="fa-solid fa-check"></i></p>
+                }
+                else
+                {
+                    <p>Workout still pending! <i class="fa-solid fa-clock"></i></p>
+                }
+                <hr />
+                <p class="card-text">Weight: @weekday.Weight lbs</p>
+                <hr />
+                <p class="card-text">Total Calories: @weekday.ReturnTotalCals(weekday.Protein, weekday.Fat, weekday.Carbohydrates)</p>
+                <hr />
+                <a id="@dayID" class="btn btn-primary" href="#" onclick="showMacros(this.id)">Macro Breakdown:</a>
+
+                <ul class="list-group list-group-flush macroBreakdown" id="macroList(@dayID)" style="display:none">
+                    <hr />
+
+                    <li class="list-group-item">Protein: @weekday.Protein (g)</li>
+                    <li class="list-group-item">Fat: @weekday.Fat (g)</li>
+                    <li class="list-group-item">Carbs: @weekday.Carbohydrates (g)</li>
+                </ul>
+                <hr />
+                <p class="card-text">Total Steps: @weekday.Steps</p>
+                <p class="card-text">Daily Relection <br />@weekday.DailyReflection</p>
+                <hr />
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+
+    function showMacros(day) {
+        const id = "macroList(" + day + ")";
+        const macro = document.getElementById(id);
+        if (macro.style.display == "none") {
+            macro.style.display = "inherit";
+        } else {
+            macro.style.display = "none";
+        }
+    }
+
+</script>

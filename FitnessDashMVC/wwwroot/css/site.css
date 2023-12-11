@@ -1,0 +1,96 @@
+html {
+    font-size: 14px;
+    color: black;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+
+}
+
+a {
+    color: white;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.appsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.day-container {
+    padding: 0px 40px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    background-color: #41BBD9;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.btn-dash {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.macroBreakdown {
+    display: none;
+
+}
+
+.editButton{
+    text-align: left;
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+}
+
+.edit{
+    margin-left: 15px;
+}
+
+
+.list-group-item {
+    padding: 0.5rem 0.5rem;
+}
+
+.text-danger{
+    margin-top: 10px;
+}

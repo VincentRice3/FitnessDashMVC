@@ -35,13 +35,13 @@ a {
     font-size: 1.5rem;
 }
 
-.appsContainer {
+.logsContainer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     text-align: center;
-    flex-wrap: wrap;
+
 }
+
 
 .header-text {
     display: flex;
@@ -56,6 +56,9 @@ a {
     color: white;
     font-weight: bolder;
     background-color: #41BBD9;
+    width: fit-content;
+    height: fit-content;
+
 }
 
 

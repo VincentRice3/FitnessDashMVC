@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricev\\source\\repos\\FitnessDashMVC\\FitnessDashMVC\\FitnessDashMVC.csproj",
+      "projectUniqueName": "C:\\Users\\ricev\\Desktop\\Projects\\FitnessDashMVC\\FitnessDashMVC\\FitnessDashMVC.csproj",
       "projectName": "FitnessDashMVC",
-      "projectPath": "C:\\Users\\ricev\\source\\repos\\FitnessDashMVC\\FitnessDashMVC\\FitnessDashMVC.csproj",
+      "projectPath": "C:\\Users\\ricev\\Desktop\\Projects\\FitnessDashMVC\\FitnessDashMVC\\FitnessDashMVC.csproj",
       "packagesPath": "C:\\Users\\ricev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricev\\source\\repos\\FitnessDashMVC\\FitnessDashMVC\\obj\\",
+      "outputPath": "C:\\Users\\ricev\\Desktop\\Projects\\FitnessDashMVC\\FitnessDashMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ricev\\AppData\\Roaming\\NuGet\\NuGet.Config",

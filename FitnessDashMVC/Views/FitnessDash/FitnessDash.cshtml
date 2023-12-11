@@ -14,74 +14,77 @@
 
     Console.WriteLine(DateTime.Today.Hour);
 }
+<script src="~/js/site.js"></script>
 
-<h1>
-    @greeting
-</h1>
+<div class="container">
 
-<div class="appsContainer">
+    <h1>
+        @greeting
+    </h1>
+    <div class="logsContainer">
 
-    @foreach (var weekday in UserLogViewModel.SortByDate(Model))
-    {
-        string dayID = weekday.MakeID(weekday.CorrectDay(weekday.Date), 5);
-        <div class="card text-nowrap day-container">
-            <div class="card-body appContent">
-                <div class="editButton">
-                    <a class="edit" href="#"><i class="fa-solid fa-pen"></i></a>
-                    <a class="edit" href="#"><i class="fa-solid fa-trash"></i></a>
-                </div>
-                <hr />
-                <div class="header-text">
-
-                    <h4 class="card-title">
-                        @weekday.CorrectDay(weekday.Date)
-                    </h4>
-                    <h4 class="card-title">
-                        @weekday.Date.ToString("dd-MM-yyyy")
-                    </h4>
-                </div>
-                <hr />
-                @if (weekday.WorkoutTrue)
-                {
-                    <p>Great Work! You Worked Out! <i class="fa-solid fa-check"></i></p>
-                }
-                else
-                {
-                    <p>Workout still pending! <i class="fa-solid fa-clock"></i></p>
-                }
-                <hr />
-                <p class="card-text">Weight: @weekday.Weight lbs</p>
-                <hr />
-                <p class="card-text">Total Calories: @weekday.ReturnTotalCals(weekday.Protein, weekday.Fat, weekday.Carbohydrates)</p>
-                <hr />
-                <a id="@dayID" class="btn btn-primary" href="#" onclick="showMacros(this.id)">Macro Breakdown:</a>
-
-                <ul class="list-group list-group-flush macroBreakdown" id="macroList(@dayID)" style="display:none">
+        @foreach (var weekday in UserLogViewModel.SortByDate(Model))
+        {
+            string dayID = weekday.MakeID(weekday.CorrectDay(weekday.Date), 5);
+            <div class="card text-nowrap day-container" id="@dayID">
+                <div class="card-body appContent">
+                    <div class="editButton">
+                        <a class="edit" href="#" ><i class="fa-solid fa-pen"></i></a>
+                        <a class="edit" id="edit-@dayID" href="#" onclick="removeLog(this.id)"><i class="fa-solid fa-trash"></i></a>
+                    </div>
                     <hr />
+                    <div class="header-text">
 
-                    <li class="list-group-item">Protein: @weekday.Protein (g)</li>
-                    <li class="list-group-item">Fat: @weekday.Fat (g)</li>
-                    <li class="list-group-item">Carbs: @weekday.Carbohydrates (g)</li>
-                </ul>
-                <hr />
-                <p class="card-text">Total Steps: @weekday.Steps</p>
-                <p class="card-text">Daily Relection <br />@weekday.DailyReflection</p>
-                <hr />
+                        <h4 class="card-title">
+                            @weekday.CorrectDay(weekday.Date)
+                        </h4>
+                        <h4 class="card-title">
+                            @weekday.Date.ToString("dd-MM-yyyy")
+                        </h4>
+                    </div>
+                    <hr />
+                    @if (weekday.WorkoutTrue)
+                    {
+                        <p>Great Work! You Worked Out! <i class="fa-solid fa-check"></i></p>
+                    }
+                    else
+                    {
+                        <p>Workout still pending! <i class="fa-solid fa-clock"></i></p>
+                    }
+                    <hr />
+                    <p class="card-text">Weight: @weekday.Weight lbs</p>
+                    <hr />
+                    <p class="card-text">Total Calories: @weekday.ReturnTotalCals(weekday.Protein, weekday.Fat, weekday.Carbohydrates)</p>
+                    <hr />
+                    <script src="~/js/site.js"></script>
+
+                    <a id="M-@dayID" class="btn btn-primary" href="#" onclick="showMacros(this.id)">Macro Breakdown:</a>
+
+                    <ul class="list-group list-group-flush macroBreakdown" id="macroList(@dayID)" style="display:none">
+                        <hr />
+
+                        <li class="list-group-item">Protein: @weekday.Protein (g)</li>
+                        <li class="list-group-item">Fat: @weekday.Fat (g)</li>
+                        <li class="list-group-item">Carbs: @weekday.Carbohydrates (g)</li>
+                    </ul>
+                    <hr />
+                    <p class="card-text">Total Steps: @weekday.Steps</p>
+                    <hr />
+                    <a id="DR-@dayID" class="btn btn-warning btn-sm" href="#" onclick="showDailyReflection(this.id)">Show Daily Reflection!</a>
+                    <hr />
+                    <p id="DR-@dayID-P" class="card-text" style="display:none">Daily Relection: <br />@weekday.DailyReflection</p>
+
+
+                </div>
             </div>
-        </div>
-    }
+        }
+
+    </div>
+
 </div>
 
 <script>
 
-    function showMacros(day) {
-        const id = "macroList(" + day + ")";
-        const macro = document.getElementById(id);
-        if (macro.style.display == "none") {
-            macro.style.display = "inherit";
-        } else {
-            macro.style.display = "none";
-        }
-    }
+
 
 </script>

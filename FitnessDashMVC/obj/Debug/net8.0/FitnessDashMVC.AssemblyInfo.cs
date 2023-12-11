@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitnessDashMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a4378e3c651ec0efe13074f38e94bae62594426")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitnessDashMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitnessDashMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

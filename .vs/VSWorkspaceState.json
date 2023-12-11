@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\FitnessDashMVC",
+    "\\FitnessDashMVC\\Models",
+    "\\FitnessDashMVC\\Views",
     "\\FitnessDashMVC\\wwwroot",
-    "\\FitnessDashMVC\\wwwroot\\css"
+    "\\FitnessDashMVC\\wwwroot\\js"
   ],
-  "SelectedNode": "\\FitnessDashMVC\\wwwroot\\css\\site.css",
+  "SelectedNode": "\\FitnessDashMVC\\Models\\ErrorViewModel.cs",
   "PreviewInSolutionExplorer": false
 }
